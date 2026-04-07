@@ -1,0 +1,11 @@
+p {
+  margin: 0em;
+}
+
+div {
+  background: lightgray;
+  background-image: linear-gradient(white, white);
+  background-repeat: no-repeat;
+  min-height: 1em;
+  margin-bottom: 0.25em;
+}
