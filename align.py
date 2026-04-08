@@ -28,6 +28,7 @@ def main():
     txt2 = f.read().split('\n')
 
   with open(args.output, 'wb') as f:
+    print('Aligning sentences, this may take a while...')
     dump(sentalign(txt1, txt2, MODEL, alignment_max_size=4), f)
 
 
