@@ -32,6 +32,7 @@ epub2txt b.epub > b.txt  # if not text already
 ./collate.py ab.pickle > ab.html
 
 ansi2html -piu < ab.html > ab.fixed.html  # if necessary
+./xmlcheck.py ab.fixed.html  # to check for invalid characters to edit out
 ```
 
 Currently the resultant html will not correctly display alignment certainties

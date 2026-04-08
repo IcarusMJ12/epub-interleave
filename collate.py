@@ -10,19 +10,20 @@ from pickle import load
 
 def score(alignment):
   if not (len(alignment.src_sentences) and len(alignment.tgt_sentences)):
-    return 0
-  return (1 - min(alignment.score, 1)) * 100
+    return 100
+  return min(alignment.score, 1) * 100
 
 
 def collate(res):
   with open('template.html', 'r') as f:
     html = f.read()
   body = [f'''
-    <div style="background-size: {score(a)}% 100%;">
+    <div class="sent">
+      <div class="bar" style="width: {score(a)}%"></div>
       <p>{''.join(a.src_sentences)}</p>
       <p>{''.join(a.tgt_sentences)}</p>
     </div>''' for a in res.alignments]
-  return html.replace('$body', '\n'.join(body))
+  return html.replace('$body', ''.join(body))
 
 
 def main():
