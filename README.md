@@ -12,7 +12,7 @@ Outside of `requirements.txt` you'll need the `google/embeddinggemma-300m` from
 huggingface.com or a similar embedding model (hardcoded for the time being).
 
 If you're interleaving epubs you'll need to first convert them to raw text using
-a tool like [epub2txt](from https://github.com/kevinboone/epub2txt2.git).
+a tool like [epub2txt](https://github.com/kevinboone/epub2txt2.git).
 
 If the resulting files have console escape codes, you may need to clean those up
 manually or by using a tool such as npm-installed `ansi2html`.
