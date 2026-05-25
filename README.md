@@ -3,6 +3,10 @@
 A collection of python tools to generate a bilingual text as color-coded html
 from a text and its translation.
 
+Each sentence or group of sentences will display the inaccuracy of the
+translation as a grey bar at the top right, extending all the way to the left
+for translations whose accuracies are 0 or less (yes, this is possible XD ).
+
 
 ## Dependencies
 
@@ -35,5 +39,5 @@ ansi2html -piu < ab.html > ab.fixed.html  # if necessary
 ./xmlcheck.py ab.fixed.html  # to check for invalid characters to edit out
 ```
 
-Currently the resultant html will not correctly display alignment certainties
-on an e-reader device such as a kindle.
+Due to CSS implementation limitations of e-reader browsers, the grey alignment
+mismatch bar doesn't span the content vertically.

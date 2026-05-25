@@ -2,7 +2,7 @@
 
 """
 Breaks a text into sentences, each one on a new line.  Paragraphs are
-double-spaced.
+double-spaced.  Outputs to stdout.
 """
 
 import spacy
@@ -17,7 +17,11 @@ def txt2paragraphs(txt):
 
 
 def main():
-  from sys import stdin
+  from sys import argv, stdin
+
+  if len(argv) > 1:
+    print(f'usage: {__file__} [< input_file] [> output_file]\n\n{__doc__}')
+    return
 
   txt = stdin.read()
   for p in txt2paragraphs(txt):
